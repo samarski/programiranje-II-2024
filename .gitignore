@@ -3,3 +3,8 @@ vjezbe_2/vjezbe2_2
 vjezbe_2/vjezbe2_3
 vjezbe_2/vjezbe2_4
 vjezbe_2/vjezbe2_5
+
+*.obj
+*.ilk
+*.pdb
+*.exe
