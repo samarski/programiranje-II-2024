@@ -20,7 +20,11 @@ int main() {
     std::cout << "Unesite broj n: ";
     std::cin >> n;
 
-    int niz[n];
+    // zavisno od verzije C++ kompajlera, može se staviti
+    // int niz[n];
+    // kasnije ćemo raditi preporučeni način...
+
+    int niz[100];
     for (int i = 0; i < n; i++) {
         std::cout << "Unesite element " << (i+1) << ": ";
         std::cin >> niz[i];
