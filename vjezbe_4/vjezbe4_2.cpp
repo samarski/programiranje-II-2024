@@ -35,7 +35,7 @@ vector<T> pomnozi(vector<T> &v) {
         // Alternativno, gornji fragment smo mogli napisati i ovako:
         // da ne računamo svaki put u petlji izraz v.size() - i - 1, uvodimo varijablu j.
         // Kako i ide od 0 naviše, tako j ide od v.size() naniže.
-        // Obratiti pažnju na prefix ++ i postfix --.
+        // Obratiti pažnju na postfix ++ i prefix --.
 
         int i(0), j(v.size());
         while (j != 0) {
