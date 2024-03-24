@@ -30,8 +30,19 @@ int main() {
     std::cout << brojTrocifrenihBrojeva(niz, niz+55)
               << std::endl;
 
-    vector<int> v{123, 234, 1000, 1};
-    std::cout << brojTrocifrenihBrojeva(&v[0], &v[4])
+    vector<int> v{123, 234, 1000, 1, 300};
+    std::cout << brojTrocifrenihBrojeva(&v[0], &v[5])
+              << std::endl;
+
+    std::cout << brojTrocifrenihBrojeva(&v[0], &v[v.size()+1])
+              << std::endl;
+
+    // N.B: std::vector ima funkcije front() i back():
+    //    https://en.cppreference.com/w/cpp/container/vector/front
+    //    https://en.cppreference.com/w/cpp/container/vector/back
+    // ali ponašanje front() i back() je nedefinisano ako se
+    // radi o "praznom" vektoru.
+    std::cout << brojTrocifrenihBrojeva(&v.front(), &v.back()+1)
               << std::endl;
 
     return 0;
