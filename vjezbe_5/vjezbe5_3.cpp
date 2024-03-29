@@ -7,13 +7,16 @@ using std::vector;
 // msr = moje super rutine
 namespace msr {
 
+    // opšta varijanta ispisa jednog vektora
     template<typename T>
     void ispisiVektor(vector<T> &v) {
         for (T &x : v) {
             std::cout << x << " ";
         }
+        std::cout << std::endl;
     }
 
+    // varijanta ispisa vektora koji sadrži pokazivače na vektore
     template<typename T>
     void ispisiVektor(vector<vector<T>*> &v) {
         std::cout << std::string(50, '-') << "\n";
@@ -25,6 +28,7 @@ namespace msr {
         }
     }
 
+    // varijanta ispisa vektora koji sadrži vektore...
     template<typename T>
     void ispisiVektor(vector<vector<T>> &v) {
         std::cout << std::string(50, '-') << "\n";
@@ -36,6 +40,14 @@ namespace msr {
         }
     }
 
+    // funkcija manji poredi dva vektora.
+    // opšta varijanta
+    template<typename T>
+    bool manji(T a, T b) {
+        return a < b;
+    }
+
+    // funkcija manji poredi dva vektora.
     // varijanta bez pokazivača (ali sa referencom)
     // TODO: probajte izmjeriti vrijeme ako nije stavljena referenca...
     template<typename T>    
@@ -53,6 +65,7 @@ namespace msr {
         return (a.size() < b.size());
     }
 
+    // funkcija manji poredi dva vektora.
     // varijanta sa pokazivačima
     template<typename T>    
     bool manji(vector<T> *a, vector<T> *b) {
@@ -84,7 +97,6 @@ namespace msr {
                 } 
             }
         }
-
     }
 }
 
@@ -95,6 +107,16 @@ void test1() {
     std::cout << "Test 1\n";
 
     vector<double> v{6.0,2.0,4.0,8.0,6.0,1.0,3.1};
+    msr::ispisiVektor(v);
+}
+
+// Provjeravamo da li nam radi dobro funkcija sorta
+void test1B() {
+    std::cout << std::string(50,'*') << "\n";
+    std::cout << "Test 1B\n";
+
+    vector<double> v{6.0,2.0,4.0,8.0,6.0,1.0,3.1};
+    msr::mojsort(v);
     msr::ispisiVektor(v);
 }
 
@@ -228,6 +250,7 @@ void test5() {
 
 int main() {
     test1();
+    test1B();
     test2();
     test3();
     test4();
