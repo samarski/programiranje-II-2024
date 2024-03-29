@@ -159,7 +159,7 @@ void inicijalizujVektorSaVektorima(vector<vector<int>> &v) {
 
 
 // test4 testira brzinu izvršavanja sortiranja vektora koji je napunjen vektorima
-// brzina može značajno varirati zavisno od toga kako je napunjen niz (zašto?)
+// brzina može značajno varirati zavisno od toga kako je napunjen vektor (zašto?)
 void test4() {
     std::cout << std::string(50,'*') << "\n";
     std::cout << "Test 4\n";
@@ -197,9 +197,6 @@ void inicijalizujVektorSaPokazivacima(vector<mojTip> &v) {
         // možemo dinamički alocirati vektor koji u startu ima potreban broj elemenata
         mojTip pomocni = new vector<int>(brojElemUJednomVektoru);
         for (int j = 0; j < brojElemUJednomVektoru; j++) {
-            // mozemo ovako
-            // pomocni->push_back(std::rand());
-            // ali mozemo i ovako:
             (*pomocni)[j] = dist(rng);
         }
         v.push_back(pomocni);
