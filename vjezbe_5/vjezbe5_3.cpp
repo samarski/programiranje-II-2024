@@ -40,7 +40,7 @@ namespace msr {
         }
     }
 
-    // funkcija manji poredi dva vektora.
+    // funkcija manji poredi dva objekta.
     // opšta varijanta
     template<typename T>
     bool manji(T a, T b) {
